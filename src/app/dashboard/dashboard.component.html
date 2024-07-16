@@ -1,0 +1,29 @@
+<div class="parentComponent">
+    <div class="greetingsParent">
+        <div class="dateSection">
+            <h2>Feb</h2>
+            <h2>4</h2>
+        </div>
+        <div class="greetingSectiion">
+            <h1>Good Morning</h1>
+            <h2>What's your plan for today?</h2>
+        </div>
+    </div>
+    <div class="todoList">
+        <div class="inputField">
+            <input type="text" name="" id="" placeholder="Add Todo" [(ngModel)]="formData.todo">
+            <button class="btn btn-secondary" (click)="addTodo()" *ngIf="!editmode">Add Todo</button>
+            <button class="btn btn-secondary" (click)="addTodo()" *ngIf="editmode">Edit Todo</button>
+        </div>
+        <div class="listOfTodo">
+            <div class="todoRepeatList" *ngFor="let todo of todoArray;">
+                <input type="radio">
+                <h3>{{todo.todo}}</h3>
+                <div class="buttons">
+                    <button class="btn btn-secondary editButton" (click)="editTodo(todo.id)">🖉</button>
+                    <button class="btn btn-secondary deleteButton" (click)="deleteTodo(todo.id)">&#10008;</button>    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
